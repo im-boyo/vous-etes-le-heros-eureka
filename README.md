@@ -8,4 +8,5 @@
 
 **Palette de couleur:** [coolors.co](https://coolors.co/274e88-302788-612788-8b54b0-dedede)
 
+## Diagramme
 ![schema](assets/images/schema.png)
