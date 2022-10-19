@@ -17,7 +17,6 @@ body {
 }
 
 .game {  
-    position: absolute;
     background-color: #274E88;
     width: 800px;
     display: flex;
@@ -39,7 +38,6 @@ body {
 }
 
 .title {
-    position: relative;
     font-family: 'Oswald', sans-serif;
     font-size: 55px;
     color: #DEDEDE;
@@ -49,7 +47,6 @@ body {
 }
 
 .text {
-    position: relative;
     font-size: 29px;
     font-family: 'Oswald', sans-serif;
     color: #DEDEDE;
@@ -60,12 +57,10 @@ body {
 
 }
 
-.image {
-    position: relative;
+img {
     width: 70%;
     height: 70%;
     margin: 20px;
-
 }
 
 .boutons {
@@ -76,7 +71,6 @@ body {
 }
 
 button {
-    position: relative;
     color: #DEDEDE;
     background-color: #612788;
     font-family: 'Oswald', sans-serif;
