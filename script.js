@@ -11,7 +11,7 @@ let chaptersObj = {
     Porte_Choix: {
         subtitle: "La porte",
         text: "C'est une porte large, brune et en bois. Essayez-vous de l'ouvrir?",
-        img: "maison.png",
+        img: "schema1.png",
         options: [
             {optionText: "L'ouvrir", action: "keyStatus()"}, 
             {optionText: "Le garder fermé", action: "goToChapter('Investiguer_Choix')"}, 
@@ -124,7 +124,7 @@ let chaptersObj = {
     Homme: {
         subtitle: "L'homme",
         text: "Alors que vos yeux s'ajustent à la lumière, vous entendiez les pas lourds d'une personne sur le gazon. Une fois que votre vision c'est habitué à la luminosité de l'extérieur, vous voyez un homme marcher vers une voiture. Que faites-vous?",
-        img: "maison.png",
+        img: "schema1.png",
         options: [
             {optionText: "L'assomer", action: "goToChapter('Assomer_Oui')"}, 
             {optionText: "L'observer", action: "goToChapter('Assomer_Non')"}
@@ -182,18 +182,10 @@ let chaptersObj = {
 };
 
 function goToChapter(chapterName) {
+
     document.querySelector(".title").innerHTML = chaptersObj[chapterName]["subtitle"];
     document.querySelector(".text").innerHTML = chaptersObj[chapterName]["text"];
-
-   let imageDelete = document.querySelector(".image");
-    let presentID = document.querySelector("#present");
-    if(presentID){
-        presentID.parentNode.removeChild(presentID)
-        imageDelete.insertAdjacentHTML("afterend",'<img src="../assets/images/' + chaptersObj[chapterName]["img"] + '" class="imageNew" id="present">');
-    } else {
-        imageDelete.insertAdjacentHTML("afterend",'<img src="../assets/images/' + chaptersObj[chapterName]["img"] + '" class="imageNew" id="present">');
-    }
-    //document.querySelector(".image").innerHTML='<img src=${chaptersObj[chapternName]} class="imageAdd">';
+    document.querySelector(".imageSwitch").innerHTML= `<img src="../assets/images/` + chaptersObj[chapterName]["img"] + `" class="image">`;
 
     let divOptions = document.querySelector('.options');
     divOptions.innerHTML = ""
