@@ -3,7 +3,7 @@ let chaptersObj = {
     Debut: {
         subtitle: "Le réveil",
         text: "Vous ouvrez vos yeux, un énorme mal de tête vous éveille par force. Une main sur le front pour vous soulager temporairement la douleur, vous vous relevez avant d'observer la pièce autour de vous. La première chose que vous remarquez s'agit de la porte derrière vous.",
-        img: "maison.png",
+        img: "chandelier.png",
         options: [
             {optionText: "Approcher de la porte", action: "goToChapter('Porte_Choix')"},
         ]
@@ -11,7 +11,7 @@ let chaptersObj = {
     Porte_Choix: {
         subtitle: "La porte",
         text: "C'est une porte large, brune et en bois. Essayez-vous de l'ouvrir?",
-        img: "schema1.png",
+        img: "porte.png",
         options: [
             {optionText: "L'ouvrir", action: "keyStatus()"}, 
             {optionText: "Le garder fermé", action: "goToChapter('Investiguer_Choix')"}, 
@@ -20,7 +20,7 @@ let chaptersObj = {
     Porte_Oui: {
         subtitle: "Oups...",
         text: "En tirant sur la poignée, elle s'enlève de la porte d'un coup. Les vis sont toutes rouillées et cassées, et sans outil, il est impossible de le réparer. Bon, tant qu'a y être, vous gardez la poignée de porte avec vous.",
-        img: "maison.png",
+        img: "porte2.png",
         options: [
             {optionText: "Retourner au salon", action: "handleGet()"},
         ]
@@ -28,12 +28,12 @@ let chaptersObj = {
     Investiguer_Choix: {
         subtitle: "Investigation",
         text: "Ceci est le salon. Où aimeriez-vous jeter un coup d'oeil?",
-        img: "maison.png",
+        img: "salon.png",
         options: [            
-            {optionText: "La porte", action: "goToChapter('Porte_Choix')"},
             {optionText: "La lampe", action: "goToChapter('Lampe_Choix')"}, 
             {optionText: "La commode", action: "goToChapter('Commode_Choix')"}, 
             {optionText: "Le canapé", action: "lightsStatus()"}, 
+            {optionText: "La porte", action: "goToChapter('Porte_Choix')"},
         ] 
     },
     Lampe_Choix: {
@@ -265,4 +265,3 @@ function gameResetGet() {
     codeFound = false;
     goToChapter("Debut")
 }
-
