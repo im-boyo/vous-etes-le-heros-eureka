@@ -92,7 +92,6 @@ let chaptersObj = {
         img: "maison.png",
         options: [
             {optionText: "Soumettre", action: "codeStatus()"}, 
-            /*{optionText: "Incorrect", action: "goToChapter('Commode_Non')"}, */
             {optionText: "Retourner au salon", action: "goToChapter('Investiguer_Choix')"}
         ] 
     },
@@ -185,9 +184,9 @@ function goToChapter(chapterName) {
 
     document.querySelector(".title").innerHTML = chaptersObj[chapterName]["subtitle"];
     document.querySelector(".text").innerHTML = chaptersObj[chapterName]["text"];
-    document.querySelector(".imageSwitch").innerHTML= `<img src="../assets/images/` + chaptersObj[chapterName]["img"] + `" class="image">`;
+    document.querySelector(".imageSwitch").innerHTML= `<img src="assets/images/${chaptersObj[chapterName]["img"]}" class="image">`;
 
-    let divOptions = document.querySelector('.options');
+    let divOptions = document.querySelector('.options'); 
     divOptions.innerHTML = ""
     for(element of chaptersObj[chapterName]["options"]){
         let buttonCreate = document.createElement("button");
@@ -203,7 +202,7 @@ let keyFound = false; //De base
 let handleFound = false;
 let lightsFound = false;
 let codeFound = false;
-let gameReset = false
+let gameReset = false;
 
 function keyGet() { //Obtenir l'objet
     keyFound = true;
