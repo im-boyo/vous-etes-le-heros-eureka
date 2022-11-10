@@ -39,7 +39,7 @@ let chaptersObj = {
     Lampe_Choix: {
         subtitle: "La lampe",
         text: "C'est une lampe sans interrupteur. Le fil est derrière une table trop lourde pour être bougée.",
-        img: "maison.png",
+        img: "lampe.png",
         options: [
             {optionText: "Éteindre l'ampoule", action: "handleStatus()"}, 
             {optionText: "Retourner au salon", action: "goToChapter('Investiguer_Choix')"}
@@ -48,7 +48,7 @@ let chaptersObj = {
     Lampe_Oui: {
         subtitle: "On éteint!",
         text: "Vous brandissez la poignée de porte et vous fracassez l'ampoule. La pièce est devenue beaucoup plus sombre, mais hereusement la faible lumière de la chandelière au-dessus de votre tête illumine toujours votre entourage.",
-        img: "maison.png",
+        img: "lampe2.png",
         options: [
             {optionText: "Retourner au salon", action: "lightsGet()"}
         ] 
@@ -56,7 +56,7 @@ let chaptersObj = {
     Lampe_Non: {
         subtitle: "Aïe!",
         text: "Vous touchez l'ampoule, mais elle est beaucoup trop brûlante. Si seulement vous pouviez l'éteindre sans avoir besoin de la prendre directement.",
-        img: "maison.png",
+        img: "lampe.png",
         options: [
             {optionText: "Retourner au salon", action: "goToChapter('Investiguer_Choix')"}
         ] 
@@ -64,7 +64,7 @@ let chaptersObj = {
     Canape_Non: {
         subtitle: "Le canapé",
         text: "C'est un canapé. Il a l'air confortable.",
-        img: "maison.png",
+        img: "canape.png",
         options: [
             {optionText: "Retourner au salon", action: "goToChapter('Investiguer_Choix')"}
         ] 
@@ -72,7 +72,7 @@ let chaptersObj = {
     Canape_Oui: {
         subtitle: "Message caché",
         text: "Le manque de lumière vous permet de voir une série de caractères sur les coussins du canapé. Pourrait-elle être utilisé quelque part?",
-        img: "maison.png",
+        img: "canape2.png",
         options: [
             {optionText: "Retourner au salon", action: "codeGet()"}
         ] 
@@ -80,25 +80,16 @@ let chaptersObj = {
     Commode_Choix: {
         subtitle: "La commode",
         text: "C'est une commode. Le premier tirroir est verouillé, seul un code à quatre chiffres peut le déverouiller.",
-        img: "maison.png",
+        img: "commode.png",
         options: [
-            {optionText: "Insérer le code", action: "goToChapter('Inserer_Code')"},
-            {optionText: "Retourner au salon", action: "goToChapter('Investiguer_Choix')"}
-        ] 
-    },
-    Inserer_Code: {
-        subtitle: "Veuillez insérer le code",
-        text: "Utilisez le clavier si-dessous pour entrer le code d'accès.",
-        img: "maison.png",
-        options: [
-            {optionText: "Soumettre", action: "codeStatus()"}, 
+            {optionText: "Insérer le code", action: "codeStatus()"},
             {optionText: "Retourner au salon", action: "goToChapter('Investiguer_Choix')"}
         ] 
     },
     Commode_Oui: {
         subtitle: "Correct!",
         text: "Bzzt! Le tirroir est déverouillé. Vous l'ouvrez et vous retrouvez une clé à l'intérieur que vous gardiez sur vous.",
-        img: "maison.png",
+        img: "commode2.png",
         options: [
             {optionText: "Retourner au salon", action: "keyGet()"}
         ] 
@@ -106,16 +97,15 @@ let chaptersObj = {
     Commode_Non: {
         subtitle: "Incorrect!",
         text: "On dirait que le code n'a pas fonctionné. Auriez-vous appuyé sur une mauvaise touche?",
-        img: "maison.png",
+        img: "commode.png",
         options: [
-            {optionText: "Réinsérer le code", action: "goToChapter('Inserer_Code')"}, 
             {optionText: "Retourner au salon", action: "goToChapter('Investiguer_Choix')"}
         ] 
     }, 
     Porte_Cle: {
         subtitle: "Liberté",
         text: "Vous insérez la clé dans la serrure de la porte. Vous la tournez et un clic vous signale qu'elle est enfin déverrouillée! Ayant apris de vos erreurs, vous tirez la deuxième poignée lentement et, une fois que vous constatez qu'elle ne tombera pas à son tour, vous ouvrez la porte à toute vitesse!",
-        img: "maison.png",
+        img: "porte3.png",
         options: [
             {optionText: "Suivant", action: "goToChapter('Homme')"}
         ] 
@@ -123,7 +113,7 @@ let chaptersObj = {
     Homme: {
         subtitle: "L'homme",
         text: "Alors que vos yeux s'ajustent à la lumière, vous entendiez les pas lourds d'une personne sur le gazon. Une fois que votre vision c'est habitué à la luminosité de l'extérieur, vous voyez un homme marcher vers une voiture. Que faites-vous?",
-        img: "schema1.png",
+        img: "homme.png",
         options: [
             {optionText: "L'assomer", action: "goToChapter('Assomer_Oui')"}, 
             {optionText: "L'observer", action: "goToChapter('Assomer_Non')"}
@@ -140,7 +130,7 @@ let chaptersObj = {
     Assomer_Non: {
         subtitle: "Si près...",
         text: "Vous regardez l'homme monter en voiture, démarrer le moteur avant de partir au loin avec le véhicule. Votre seul moyen de quitter cette  située au milieu de nul part vient de se glisser de vos mains.",
-        img: "maison.png",
+        img: "gameover.png",
         options: [
             {optionText: "Recommencer", action: "gameResetGet()"}
         ] 
@@ -264,3 +254,9 @@ function gameResetGet() {
     codeFound = false;
     goToChapter("Debut")
 }
+
+function startGame() {
+    goToChapter("Debut")
+}
+
+startGame()
