@@ -122,7 +122,7 @@ let chaptersObj = {
     Assomer_Oui: {
         subtitle: "Attaque!",
         text: "Vous brandissez la poignée de porte et vous assomez l'homme en frappant le derrière de sa tête. Il s'écroule au sol.",
-        img: "maison.png",
+        img: "homme2.png",
         options: [
             {optionText: "Suivant", action: "goToChapter('Aller_Ou_Choix')"}
         ] 
@@ -138,7 +138,7 @@ let chaptersObj = {
     Aller_Ou_Choix: {
         subtitle: "Que faire?",
         text: "Maintenant que l'homme inconnu est inconscient, qu'allez-vous faire?",
-        img: "maison.png",
+        img: "quefaire.png",
         options: [
             {optionText: "Quitter avec la voiture", action: "goToChapter('Voiture')"}, 
             {optionText: "Chercher le corps de l'homme", action: "goToChapter('Corps')"}
@@ -147,7 +147,7 @@ let chaptersObj = {
     Voiture: {
         subtitle: "La voiture",
         text: "Vous entrez dans la voiture et vous essayez de la démarrer... Mais vous n'avez pas les clés. Alors que vous cherchiez par panique dans tout les compartiments du véhicule pour les clés, la portière du conducteur s'ouvre soudainement et l'homme vous tire hors de la voiture par le col de votre chandail...",
-        img: "maison.png",
+        img: "gameoverAuto.png",
         options: [
             {optionText: "Recommencer", action: "gameResetGet()"}
         ] 
@@ -155,7 +155,7 @@ let chaptersObj = {
     Corps: {
         subtitle: "Le corps",
         text: "Vous fouillez dans les poches de la veste de l'homme et vous y retirez une paire de clés.",
-        img: "maison.png",
+        img: "cle.png",
         options: [
             {optionText: "Quitter avec la voiture", action: "goToChapter('Fin')"}
         ] 
@@ -163,7 +163,7 @@ let chaptersObj = {
     Fin: {
         subtitle: "Adieu",
         text: "Vous entrez dans la voiture et vous insérez la clé dans la serrure pour ensuite démarrer le véhicule. Dès que vous pouviez partir, vous appuyez sur la pédale et vous quittez à toute vitesse, juste à temps pour que l'homme dont vous avez assomé se relève au loin, où vous l'aviez laissé.",
-        img: "maison.png",
+        img: "ending.png",
         options: [
             {optionText: "Fin", action: "gameResetGet()"}
         ] 
