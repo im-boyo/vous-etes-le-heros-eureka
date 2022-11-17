@@ -200,15 +200,11 @@ function goToChapter(chapterName) {
     localStorage.setItem("Name", [chapterName]);
 };
 
-localStorage.setItem("Code", false);
-localStorage.setItem("Lights Off", false);
-localStorage.setItem("Handle", false);
-localStorage.setItem("Key", false);
 
-let keyFound = Boolean("Key"); //De base
-let handleFound = Boolean("Handle");
-let lightsFound = Boolean("Lights Off");
-let codeFound = Boolean("Code");
+let keyFound = false; //De base
+let handleFound = false;
+let lightsFound = false;
+let codeFound = false;
 let gameReset = false;
 
 function keyGet() { //Obtenir l'objet
