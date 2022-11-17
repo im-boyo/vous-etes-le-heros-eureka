@@ -284,6 +284,7 @@ function gameResetGet() {
 let lastChapter = localStorage.getItem("Name")
 
 function startGame() {
+    goToChapter("Debut");
     if (lastChapter !== "Debut") {
         goToChapter(lastChapter)
     } else {
