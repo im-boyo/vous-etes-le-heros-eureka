@@ -3,7 +3,8 @@ let chaptersObj = {
     Debut: {
         subtitle: "Le réveil",
         text: "Vous ouvrez vos yeux, un énorme mal de tête vous éveille par force. Une main sur le front pour vous soulager temporairement la douleur, vous vous relevez avant d'observer la pièce autour de vous. La première chose que vous remarquez s'agit de la porte derrière vous.",
-        img: "chandelier.png",
+        img: "chanderlier.png",
+        video: "chandeliervid.mp4",
         options: [
             {optionText: "Approcher de la porte", action: "goToChapter('Porte_Choix')"},
         ]
@@ -164,6 +165,7 @@ let chaptersObj = {
         subtitle: "Adieu",
         text: "Vous entrez dans la voiture et vous insérez la clé dans la serrure pour ensuite démarrer le véhicule. Dès que vous pouviez partir, vous appuyez sur la pédale et vous quittez à toute vitesse, juste à temps pour que l'homme dont vous avez assomé se relève au loin, où vous l'aviez laissé.",
         img: "ending.png",
+        video: "endingvid.mp4",
         options: [
             {optionText: "Fin", action: "gameResetGet()"}
         ] 
@@ -172,10 +174,18 @@ let chaptersObj = {
 
 function goToChapter(chapterName) {
 
+    const audio = new Audio("assets/sounds/interface.mp3");
+    audio.play();
+
     document.querySelector(".title").innerHTML = chaptersObj[chapterName]["subtitle"];
     document.querySelector(".text").innerHTML = chaptersObj[chapterName]["text"];
-    document.querySelector(".imageSwitch").innerHTML= `<img src="assets/images/${chaptersObj[chapterName]["img"]}" class="image">`;
-
+    
+    if (chaptersObj[chapterName]["video"]) {
+        document.querySelector(".imageSwitch").innerHTML= `<video src="assets/videos/${chaptersObj[chapterName]["video"]}" class="video" loop muted autoplay></video>`;
+    } else {
+        document.querySelector(".imageSwitch").innerHTML= `<img src="assets/images/${chaptersObj[chapterName]["img"]}" class="image">`;
+    }
+    
     let divOptions = document.querySelector('.options'); 
     divOptions.innerHTML = ""
     for(element of chaptersObj[chapterName]["options"]){
@@ -185,18 +195,27 @@ function goToChapter(chapterName) {
         let buttonTextNode = document.createTextNode(element["optionText"]);
         buttonCreate.appendChild(buttonTextNode);
         divOptions.appendChild(buttonCreate);
-    }
+        
+    };
+    localStorage.setItem("Name", [chapterName]);
 };
 
-let keyFound = false; //De base
-let handleFound = false;
-let lightsFound = false;
-let codeFound = false;
+localStorage.setItem("Code", false);
+localStorage.setItem("Lights Off", false);
+localStorage.setItem("Handle", false);
+localStorage.setItem("Key", false);
+
+let keyFound = Boolean("Key"); //De base
+let handleFound = Boolean("Handle");
+let lightsFound = Boolean("Lights Off");
+let codeFound = Boolean("Code");
 let gameReset = false;
 
 function keyGet() { //Obtenir l'objet
-    keyFound = true;
+    localStorage.setItem("Key", true);
+    keyFound = Boolean("Key");
     goToChapter("Investiguer_Choix");
+    
 };
 
 function keyStatus() { 
@@ -208,8 +227,9 @@ function keyStatus() {
 };
 
 function handleGet() {
-    handleFound = true;
-    goToChapter("Investiguer_Choix")
+    localStorage.setItem("Handle", true);
+    handleFound = Boolean("Handle");
+    goToChapter("Investiguer_Choix");
 };
 
 function handleStatus() {
@@ -221,8 +241,9 @@ function handleStatus() {
 };
 
 function lightsGet() {
-    lightsFound = true;
-    goToChapter("Investiguer_Choix")
+    localStorage.setItem("Lights Off", true);
+    lightsFound = Boolean("Lights Off");
+    goToChapter("Investiguer_Choix");
 };
 
 function lightsStatus() {
@@ -234,8 +255,9 @@ function lightsStatus() {
 };
 
 function codeGet() {
-    codeFound = true;
-    goToChapter("Investiguer_Choix")
+    localStorage.setItem("Code", true);
+    codeFound = Boolean("Code");
+    goToChapter("Investiguer_Choix");
 };
 
 function codeStatus() {
@@ -252,11 +274,22 @@ function gameResetGet() {
     handleFound = false;
     lightsFound = false;
     codeFound = false;
+    localStorage.setItem("Code", false);
+    localStorage.setItem("Lights Off", false);
+    localStorage.setItem("Handle", false);
+    localStorage.setItem("Key", false)
     goToChapter("Debut")
 }
 
+let lastChapter = localStorage.getItem("Name")
+
 function startGame() {
-    goToChapter("Debut")
+    if (lastChapter !== "Debut") {
+        goToChapter(lastChapter)
+    } else {
+        goToChapter("Debut")
+    }
+    
 }
 
 startGame()
