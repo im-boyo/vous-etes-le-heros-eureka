@@ -175,6 +175,7 @@ let chaptersObj = {
 function goToChapter(chapterName) {
 
     const audio = new Audio("assets/sounds/interface.mp3");
+    audio.currentTime = 0;
     audio.play();
 
     document.querySelector(".title").innerHTML = chaptersObj[chapterName]["subtitle"];
