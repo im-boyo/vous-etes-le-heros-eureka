@@ -43,7 +43,7 @@ let chaptersObj = {
         img: "lampe.png",
         options: [
             {optionText: "Éteindre l'ampoule", action: "handleStatus()"}, 
-            {optionText: "Retourner au salon", action: "goToChapter('Investiguer_Choix')"}
+            {optionText: "Retourner au salon", action: "goToChapter('Investiguer_Choix')"},
         ] 
     },
     Lampe_Oui: {
@@ -51,7 +51,7 @@ let chaptersObj = {
         text: "Vous brandissez la poignée de porte et vous fracassez l'ampoule. La pièce est devenue beaucoup plus sombre, mais hereusement la faible lumière de la chandelière au-dessus de votre tête illumine toujours votre entourage.",
         img: "lampe2.png",
         options: [
-            {optionText: "Retourner au salon", action: "lightsGet()"}
+            {optionText: "Retourner au salon", action: "lightsGet()"},
         ] 
     },
     Lampe_Non: {
@@ -59,7 +59,7 @@ let chaptersObj = {
         text: "Vous touchez l'ampoule, mais elle est beaucoup trop brûlante. Si seulement vous pouviez l'éteindre sans avoir besoin de la prendre directement.",
         img: "lampe.png",
         options: [
-            {optionText: "Retourner au salon", action: "goToChapter('Investiguer_Choix')"}
+            {optionText: "Retourner au salon", action: "goToChapter('Investiguer_Choix')"},
         ] 
     },
     Canape_Non: {
@@ -67,7 +67,7 @@ let chaptersObj = {
         text: "C'est un canapé. Il a l'air confortable.",
         img: "canape.png",
         options: [
-            {optionText: "Retourner au salon", action: "goToChapter('Investiguer_Choix')"}
+            {optionText: "Retourner au salon", action: "goToChapter('Investiguer_Choix')"},
         ] 
     },
     Canape_Oui: {
@@ -75,7 +75,7 @@ let chaptersObj = {
         text: "Le manque de lumière vous permet de voir une série de caractères sur les coussins du canapé. Pourrait-elle être utilisé quelque part?",
         img: "canape2.png",
         options: [
-            {optionText: "Retourner au salon", action: "codeGet()"}
+            {optionText: "Retourner au salon", action: "codeGet()"},
         ] 
     },
     Commode_Choix: {
@@ -84,7 +84,7 @@ let chaptersObj = {
         img: "commode.png",
         options: [
             {optionText: "Insérer le code", action: "codeStatus()"},
-            {optionText: "Retourner au salon", action: "goToChapter('Investiguer_Choix')"}
+            {optionText: "Retourner au salon", action: "goToChapter('Investiguer_Choix')"},
         ] 
     },
     Commode_Oui: {
@@ -92,7 +92,7 @@ let chaptersObj = {
         text: "Bzzt! Le tirroir est déverouillé. Vous l'ouvrez et vous retrouvez une clé à l'intérieur que vous gardiez sur vous.",
         img: "commode2.png",
         options: [
-            {optionText: "Retourner au salon", action: "keyGet()"}
+            {optionText: "Retourner au salon", action: "keyGet()"},
         ] 
     },
     Commode_Non: {
@@ -100,7 +100,7 @@ let chaptersObj = {
         text: "On dirait que le code n'a pas fonctionné. Auriez-vous appuyé sur une mauvaise touche?",
         img: "commode.png",
         options: [
-            {optionText: "Retourner au salon", action: "goToChapter('Investiguer_Choix')"}
+            {optionText: "Retourner au salon", action: "goToChapter('Investiguer_Choix')"},
         ] 
     }, 
     Porte_Cle: {
@@ -108,7 +108,7 @@ let chaptersObj = {
         text: "Vous insérez la clé dans la serrure de la porte. Vous la tournez et un clic vous signale qu'elle est enfin déverrouillée! Ayant apris de vos erreurs, vous tirez la deuxième poignée lentement et, une fois que vous constatez qu'elle ne tombera pas à son tour, vous ouvrez la porte à toute vitesse!",
         img: "porte3.png",
         options: [
-            {optionText: "Suivant", action: "goToChapter('Homme')"}
+            {optionText: "Suivant", action: "goToChapter('Homme')"},
         ] 
     },
     Homme: {
@@ -117,7 +117,7 @@ let chaptersObj = {
         img: "homme.png",
         options: [
             {optionText: "L'assomer", action: "goToChapter('Assomer_Oui')"}, 
-            {optionText: "L'observer", action: "goToChapter('Assomer_Non')"}
+            {optionText: "L'observer", action: "goToChapter('Assomer_Non')"},
         ] 
     },
     Assomer_Oui: {
@@ -125,7 +125,7 @@ let chaptersObj = {
         text: "Vous brandissez la poignée de porte et vous assomez l'homme en frappant le derrière de sa tête. Il s'écroule au sol.",
         img: "homme2.png",
         options: [
-            {optionText: "Suivant", action: "goToChapter('Aller_Ou_Choix')"}
+            {optionText: "Suivant", action: "goToChapter('Aller_Ou_Choix')"},
         ] 
     },
     Assomer_Non: {
@@ -133,7 +133,7 @@ let chaptersObj = {
         text: "Vous regardez l'homme monter en voiture, démarrer le moteur avant de partir au loin avec le véhicule. Votre seul moyen de quitter cette  située au milieu de nul part vient de se glisser de vos mains.",
         img: "gameover.png",
         options: [
-            {optionText: "Recommencer", action: "gameResetGet()"}
+            {optionText: "Effacer ma partie", action: "reset()"},
         ] 
     },
     Aller_Ou_Choix: {
@@ -150,7 +150,7 @@ let chaptersObj = {
         text: "Vous entrez dans la voiture et vous essayez de la démarrer... Mais vous n'avez pas les clés. Alors que vous cherchiez par panique dans tout les compartiments du véhicule pour les clés, la portière du conducteur s'ouvre soudainement et l'homme vous tire hors de la voiture par le col de votre chandail...",
         img: "gameoverAuto.png",
         options: [
-            {optionText: "Recommencer", action: "gameResetGet()"}
+            {optionText: "Effacer ma partie", action: "reset()"},
         ] 
     },
     Corps: {
@@ -167,16 +167,21 @@ let chaptersObj = {
         img: "ending.png",
         video: "endingvid.mp4",
         options: [
-            {optionText: "Fin", action: "gameResetGet()"}
+            {optionText: "Effacer ma partie", action: "reset()"},
         ] 
     },
 };
 
 function goToChapter(chapterName) {
+     let checkbox = document.querySelector('[type="checkbox"]');
+     let wantAudio = checkbox.checked;
 
-    const audio = new Audio("assets/sounds/interface.mp3");
+    if (wantAudio == true) {
+        const audio = new Audio("assets/sounds/interface.mp3");
     audio.currentTime = 0;
     audio.play();
+    }
+    
 
     document.querySelector(".title").innerHTML = chaptersObj[chapterName]["subtitle"];
     document.querySelector(".text").innerHTML = chaptersObj[chapterName]["text"];
@@ -206,7 +211,6 @@ let keyFound = false; //De base
 let handleFound = false;
 let lightsFound = false;
 let codeFound = false;
-let gameReset = false;
 
 function keyGet() { //Obtenir l'objet
     localStorage.setItem("Key", true);
@@ -265,19 +269,6 @@ function codeStatus() {
     }
 }
 
-function gameResetGet() {
-    gameReset = true;
-    keyFound = false;
-    handleFound = false;
-    lightsFound = false;
-    codeFound = false;
-    localStorage.setItem("Code", false);
-    localStorage.setItem("Lights Off", false);
-    localStorage.setItem("Handle", false);
-    localStorage.setItem("Key", false)
-    goToChapter("Debut")
-}
-
 let lastChapter = localStorage.getItem("Name")
 
 function startGame() {
@@ -291,3 +282,15 @@ function startGame() {
 }
 
 startGame()
+
+function reset() {
+    keyFound = false;
+    handleFound = false;
+    lightsFound = false;
+    codeFound = false;
+    localStorage.removeItem("Code");
+    localStorage.removeItem("Lights Off");
+    localStorage.removeItem("Handle");
+    localStorage.removeItem("Key");
+    goToChapter("Debut")
+}
