@@ -7,6 +7,7 @@ let chaptersObj = {
         video: "chandeliervid.mp4",
         options: [
             {optionText: "Approcher de la porte", action: "goToChapter('Porte_Choix')"},
+            {optionText: "Effacer ma partie", action: "reset()"},
         ]
     },
     Porte_Choix: {
@@ -16,6 +17,7 @@ let chaptersObj = {
         options: [
             {optionText: "L'ouvrir", action: "keyStatus()"}, 
             {optionText: "Le garder fermé", action: "goToChapter('Investiguer_Choix')"}, 
+            {optionText: "Effacer ma partie", action: "reset()"},
         ] 
     },
     Porte_Oui: {
@@ -24,6 +26,7 @@ let chaptersObj = {
         img: "porte2.png",
         options: [
             {optionText: "Retourner au salon", action: "handleGet()"},
+            {optionText: "Effacer ma partie", action: "reset()"},
         ]
     },
     Investiguer_Choix: {
@@ -35,6 +38,7 @@ let chaptersObj = {
             {optionText: "La commode", action: "goToChapter('Commode_Choix')"}, 
             {optionText: "Le canapé", action: "lightsStatus()"}, 
             {optionText: "La porte", action: "goToChapter('Porte_Choix')"},
+            {optionText: "Effacer ma partie", action: "reset()"},
         ] 
     },
     Lampe_Choix: {
@@ -44,6 +48,7 @@ let chaptersObj = {
         options: [
             {optionText: "Éteindre l'ampoule", action: "handleStatus()"}, 
             {optionText: "Retourner au salon", action: "goToChapter('Investiguer_Choix')"},
+            {optionText: "Effacer ma partie", action: "reset()"},
         ] 
     },
     Lampe_Oui: {
@@ -52,6 +57,7 @@ let chaptersObj = {
         img: "lampe2.png",
         options: [
             {optionText: "Retourner au salon", action: "lightsGet()"},
+            {optionText: "Effacer ma partie", action: "reset()"},
         ] 
     },
     Lampe_Non: {
@@ -60,6 +66,7 @@ let chaptersObj = {
         img: "lampe.png",
         options: [
             {optionText: "Retourner au salon", action: "goToChapter('Investiguer_Choix')"},
+            {optionText: "Effacer ma partie", action: "reset()"},
         ] 
     },
     Canape_Non: {
@@ -68,6 +75,7 @@ let chaptersObj = {
         img: "canape.png",
         options: [
             {optionText: "Retourner au salon", action: "goToChapter('Investiguer_Choix')"},
+            {optionText: "Effacer ma partie", action: "reset()"},
         ] 
     },
     Canape_Oui: {
@@ -76,6 +84,7 @@ let chaptersObj = {
         img: "canape2.png",
         options: [
             {optionText: "Retourner au salon", action: "codeGet()"},
+            {optionText: "Effacer ma partie", action: "reset()"},
         ] 
     },
     Commode_Choix: {
@@ -85,6 +94,7 @@ let chaptersObj = {
         options: [
             {optionText: "Insérer le code", action: "codeStatus()"},
             {optionText: "Retourner au salon", action: "goToChapter('Investiguer_Choix')"},
+            {optionText: "Effacer ma partie", action: "reset()"},
         ] 
     },
     Commode_Oui: {
@@ -93,6 +103,7 @@ let chaptersObj = {
         img: "commode2.png",
         options: [
             {optionText: "Retourner au salon", action: "keyGet()"},
+            {optionText: "Effacer ma partie", action: "reset()"},
         ] 
     },
     Commode_Non: {
@@ -101,6 +112,7 @@ let chaptersObj = {
         img: "commode.png",
         options: [
             {optionText: "Retourner au salon", action: "goToChapter('Investiguer_Choix')"},
+            {optionText: "Effacer ma partie", action: "reset()"},
         ] 
     }, 
     Porte_Cle: {
@@ -109,6 +121,7 @@ let chaptersObj = {
         img: "porte3.png",
         options: [
             {optionText: "Suivant", action: "goToChapter('Homme')"},
+            {optionText: "Effacer ma partie", action: "reset()"},
         ] 
     },
     Homme: {
@@ -118,6 +131,7 @@ let chaptersObj = {
         options: [
             {optionText: "L'assomer", action: "goToChapter('Assomer_Oui')"}, 
             {optionText: "L'observer", action: "goToChapter('Assomer_Non')"},
+            {optionText: "Effacer ma partie", action: "reset()"},
         ] 
     },
     Assomer_Oui: {
@@ -126,6 +140,7 @@ let chaptersObj = {
         img: "homme2.png",
         options: [
             {optionText: "Suivant", action: "goToChapter('Aller_Ou_Choix')"},
+            {optionText: "Effacer ma partie", action: "reset()"},
         ] 
     },
     Assomer_Non: {
@@ -142,7 +157,8 @@ let chaptersObj = {
         img: "quefaire.png",
         options: [
             {optionText: "Quitter avec la voiture", action: "goToChapter('Voiture')"}, 
-            {optionText: "Chercher le corps de l'homme", action: "goToChapter('Corps')"}
+            {optionText: "Chercher le corps de l'homme", action: "goToChapter('Corps')"},
+            {optionText: "Effacer ma partie", action: "reset()"},
         ] 
     },
     Voiture: {
@@ -158,7 +174,8 @@ let chaptersObj = {
         text: "Vous fouillez dans les poches de la veste de l'homme et vous y retirez une paire de clés.",
         img: "cle.png",
         options: [
-            {optionText: "Quitter avec la voiture", action: "goToChapter('Fin')"}
+            {optionText: "Quitter avec la voiture", action: "goToChapter('Fin')"},
+            {optionText: "Effacer ma partie", action: "reset()"},
         ] 
     },
     Fin: {
@@ -204,6 +221,11 @@ function goToChapter(chapterName) {
         
     };
     localStorage.setItem("Name", [chapterName]);
+
+    let body = document.querySelector("body");
+    body.setAttribute("class", [chapterName])
+    
+
 };
 
 

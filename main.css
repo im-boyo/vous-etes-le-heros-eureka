@@ -18,7 +18,7 @@ body {
 
 .game {  
     background-color: #274E88;
-    width: 800px;
+    width: 900px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -28,8 +28,8 @@ body {
 
 .logo {
     font-family: "Escape";
-    font-size: 100px;
-    letter-spacing: 10px;
+    font-size: 80px;
+    letter-spacing: 15px;
     color: #DEDEDE;
     position: relative;
     padding: 0 30px 0 30px;
@@ -39,7 +39,7 @@ body {
 
 .title {
     font-family: 'Oswald', sans-serif;
-    font-size: 55px;
+    font-size: 40px;
     color: #DEDEDE;
     padding: 0 30px 0 30px;
     margin: 10px 10px 10px 10px;
@@ -47,7 +47,7 @@ body {
 }
 
 .text {
-    font-size: 29px;
+    font-size: 22px;
     font-family: 'Oswald', sans-serif;
     color: #DEDEDE;
     text-align: center;
@@ -99,4 +99,68 @@ button:hover {
     color: #DEDEDE;
     font-family: 'Oswald', sans-serif;
     font-size: 30px;    
+}
+
+.Lampe_Non, .Commode_Non, .Canape_Non, .Assomer_Non, .Voiture, .Lampe_Non button, .Commode_Non button, .Canape_Non button, .Assomer_Non button, .Voiture button{
+    animation: wrong 1s ease-in;
+}
+
+.Lampe_Non .game, .Commode_Non .game, .Canape_Non .game, .Assomer_Non .game, .Voiture .game{
+    animation: wrongGame 1s ease-in;
+}
+
+.Porte_Oui, .Lampe_Oui, .Canape_Oui, .Commode_Oui, .Porte_Cle, .Assomer_Oui, .Corps, .Porte_Oui button, .Lampe_Oui button, .Canape_Oui button, .Commode_Oui button, .Porte_Cle button, .Assomer_Oui button, .Corps button{
+    animation: obtained 1s ease-in;
+}
+
+.Porte_Oui .game, .Lampe_Oui .game, .Canape_Oui .game, .Commode_Oui .game, .Porte_Cle .game, .Assomer_Oui .game, .Corps .game{
+    animation: obtainedGame 1s ease-in;
+}
+
+.Fin, .Fin button{
+    animation: win 2s ease-in;
+}
+
+.Fin .game{
+    animation: winGame 2s ease-in;
+}
+
+.Debut, .Debut button{
+    animation: begin 2s ease-in;
+}
+
+.Debut .game{
+    animation: beginGame 2s ease-in;
+}
+
+@keyframes wrong {
+    from{background-color: rgb(170, 43, 43);}
+}
+
+@keyframes wrongGame {
+    from{background-color: rgb(226, 62, 62);}
+}
+
+@keyframes obtained {
+    from{background-color:  #a2da59c2;};
+}
+
+@keyframes obtainedGame {
+    from{background-color:  #84d619b6;};
+}
+
+@keyframes win {
+    from{background-color: rgba(223, 208, 0, 0.719);}
+}
+
+@keyframes winGame {
+    from{background-color: rgb(223, 208, 0);}
+}
+
+@keyframes begin{
+    from{background-color: rgba(0, 0, 0, 0.699);}
+}
+
+@keyframes beginGame{
+    from{background-color: rgba(0, 0, 0, 0.699);}
 }
