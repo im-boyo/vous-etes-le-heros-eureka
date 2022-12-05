@@ -228,7 +228,6 @@ function goToChapter(chapterName) {
 
 };
 
-
 let keyFound = false; //De base
 let handleFound = false;
 let lightsFound = false;
